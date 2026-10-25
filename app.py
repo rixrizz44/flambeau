@@ -27,7 +27,7 @@ data = charger_donnees()
 
 # --- HEADER : LOGO DU SITE ---
 # On affiche ton magnifique logo rond centré tout en haut
-st.image("image_joDeO3.png", use_container_width=True)
+st.image("image_joDeO3.png.jpeg", use_container_width=True)
 
 st.title("🔥 Le Flambeau de Suaudeau")
 st.subheader("Le trophée virtuel dynamique de la Ligue 2 BKT")
@@ -39,7 +39,7 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     # On affiche ton magnifique trophée 3D ici
-    st.image("image_3jnHhV.png", caption="Le Flambeau physique actuel", use_container_width=True)
+    st.image("image_3jnHhV.png.jpeg", caption="Le Flambeau physique actuel", use_container_width=True)
     
 with col2:
     st.markdown(f"### **{data['detenteur']}**")
