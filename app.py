@@ -26,8 +26,13 @@ def sauvegarder_donnees(data):
 data = charger_donnees()
 
 # --- HEADER : LOGO DU SITE ---
-# On affiche ton magnifique logo rond centré tout en haut
-st.image("image_joDeO3.png.jpeg", use_container_width=True)
+# Code sécurisé pour le logo
+if os.path.exists("image_joDeO3.png.jpeg"):
+    st.image("image_joDeO3.png.jpeg", use_container_width=True)
+elif os.path.exists("image_joDeO3.png"):
+    st.image("image_joDeO3.png", use_container_width=True)
+else:
+    st.title("⚽ LE FLAMBEAU DE SUAUDEAU")
 
 st.title("🔥 Le Flambeau de Suaudeau")
 st.subheader("Le trophée virtuel dynamique de la Ligue 2 BKT")
@@ -35,11 +40,16 @@ st.write("---")
 
 # Section 1 : Détenteur Actuel
 st.header("👑 Détenteur Actuel")
-col1, col2 = st.columns([1, 1])
+col1, col2 = st.columns(2)
 
 with col1:
-    # On affiche ton magnifique trophée 3D ici
-    st.image("image_3jnHhV.png.jpeg", caption="Le Flambeau physique actuel", use_container_width=True)
+    # Code sécurisé pour le trophée
+    if os.path.exists("image_3jnHhV.png.jpeg"):
+        st.image("image_3jnHhV.png.jpeg", caption="Le Flambeau physique actuel", use_container_width=True)
+    elif os.path.exists("image_3jnHhV.png"):
+        st.image("image_3jnHhV.png", caption="Le Flambeau physique actuel", use_container_width=True)
+    else:
+        st.info("🏆 [Trophée en cours de chargement]")
     
 with col2:
     st.markdown(f"### **{data['detenteur']}**")
@@ -55,8 +65,9 @@ st.write(f"**Date prévue :** {data['date_match']}")
 
 st.write("---")
 
-# Section 3 : Classement Dynamique
+# Section 3 : Classement Dynamique (CORRIGÉ GRÂCE À META AI)
 st.header("🏆 Classement Historique des Possessions")
+# Correction du tri ici pour classer par le nombre de possessions (index 1)
 clubs_ordonnes = sorted(data["possessions"].items(), key=lambda x: x[1], reverse=True)
 
 rangs, clubs, possessions, statuts = [], [], [], []
